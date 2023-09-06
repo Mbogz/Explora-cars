@@ -13,7 +13,7 @@ export default function CarDetails()  {
 
   useEffect(() => {
     axios
-      .get(`https://explora-cars-production.up.railway.app/cars/${id}`)
+      .get(`http://127.0.0.1:3000/CarDetails${id}`)
       .then((response) => {
         setCar(response.data);
         setLoading(false);
@@ -27,7 +27,7 @@ export default function CarDetails()  {
 
     const handleBooking = () => {
       axios
-        .post(`https://explora-cars-production.up.railway.app/bookings`, {
+        .post(`http://127.0.0.1:3000/bookings`, {
           car_id: car._id,
           user_id: "some_user_id", 
           start_date: "some_start_date",
